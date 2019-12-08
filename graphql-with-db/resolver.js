@@ -1,19 +1,26 @@
+const con = require("./db_connect");
+var rp = require('request-promise');
+
+
+const Emp = require("./model");
+
 const resolvers = {
-    Query: {
-        getBooks: () => books,
-        getAuthors: () => authors,
-        getAuthor: ( _, { id } ) => 
-        {
-            return authors.find(author => author.id == id);
-        },
-        getBookByAuthorId: (_, {id}) => {
-  
-          return books.find(book => book.authorid == id);
-        }
-        
-        
-    },
-  };
+	
+		Query: {
+				
+			getEmployee:(_,{emp_no}) => {
+				let query = con.select().from("employees").where("emp_no",emp_no);
+
+				return  query.then(rows => new Emp(rows[0]));
+			},
+			getAllEmployee: () => {
+				let query = con.select().from("employees").limit(10);
+
+				return query.then(rows => rows.map(row => new Emp(row)));
+			}
+				
+		},
+	};
 
 
 module.exports = resolvers;

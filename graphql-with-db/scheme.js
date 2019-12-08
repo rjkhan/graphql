@@ -5,24 +5,28 @@ const typeDefs = gql`
   # Comments in GraphQL strings (such as this one) start with the hash (#) symbol.
 
   # This "Book" type defines the queryable fields for every book in our data source.
-type Book {
-    id: ID!
-    title: String
-    author: Author
-}
 
-type Author {
-    id: ID!
-    name: String,
-    phone: Int,
-    books: [Book]
-}
+	scalar Date
+	type Employees
+	{
+		emp_no: ID!,
+		birth_date: Date,
+		first_name: String,
+		last_name: String,
+		gender: String,
+		hire_date: Date
+	}
 
-type Query {
-  getBooks: [Book]
-  getAuthors: [Author]
-  getAuthor(id: ID!): Author
-  getBookByAuthorId(id: ID!): Book
-}
+
+	type Query {
+		getEmployee(emp_no: ID!): Employees
+		getAllEmployee: [Employees]
+	}
+
+
+
 `;
+
+
+
 module.exports = typeDefs;

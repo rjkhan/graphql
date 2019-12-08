@@ -22,10 +22,6 @@
 --  Any similarity to existing people is purely coincidental.
 -- 
 
-DROP DATABASE IF EXISTS employees;
-CREATE DATABASE IF NOT EXISTS employees;
-USE employees;
-
 SELECT 'CREATING DATABASE STRUCTURE' as 'INFO';
 
 DROP TABLE IF EXISTS dept_emp,
@@ -124,4 +120,4 @@ source /Users/rabnawazjansher/Documents/graphql/graphql-with-db/db/load_salaries
 source /Users/rabnawazjansher/Documents/graphql/graphql-with-db/db/load_salaries2.dump ;
 source /Users/rabnawazjansher/Documents/graphql/graphql-with-db/db/load_salaries3.dump ;
 
-source /Users/rabnawazjansher/Documents/graphql/graphql-with-db/db/show_elapsed.sql ;
+
