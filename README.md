@@ -14,7 +14,7 @@ pip install -r requirment.txt
 ```
 
 ### Repository structure
-
+```bash
 ├── .github
 │   └── workflows
 │       └── main.yml
@@ -145,7 +145,7 @@ pip install -r requirment.txt
 │   ├── SOURCES.txt
 │   └── top_level.txt
 └── setup.py
-
+```
 ### Updating the schema
 To update schema go to directory `schema` at the root folder create `country.py` file. After that create country model class in this file. For example reference, you can use structure of `Argentina.py` Once you created your model. Update the `schema.rst` file at `schema/docs_src/schema.rst` 
 
@@ -195,4 +195,3 @@ After the build has completed, you will find the packaged build in the `./dist` 
 This build should be distributed using Artifactory. Read the guide here: [INSERT LINK FOR ARTIFACTORY]
 
 iBOFFIN v1.0.0 will contain further utilities to automate this process!
-
